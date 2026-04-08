@@ -36,9 +36,11 @@ body {
     border-radius: 10px;
     margin-block-start: 20px;
     cursor: pointer;
+    transition: transform 0.4s ease; /* smooth animation */
 }
 
 .resize-grid-btn:hover {
     background-color: #bfe3e3;
     border-color: #64748b;
+    transform: scale(1.1);
 }
