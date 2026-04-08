@@ -1,3 +1,10 @@
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+
+    return `rgb(${r}, ${g}, ${b})`;
+}
 function createGrid(numSquaresPerSide) {
     // make the grid
     const sizeOfGrid = 640; // px
@@ -15,7 +22,7 @@ function createGrid(numSquaresPerSide) {
 
     // detect hovering on cell to simulate pen track
     grid.addEventListener("mouseover", (e) => {
-        e.target.style.backgroundColor = "#111827";
+        e.target.style.backgroundColor = getRandomColor();
     });
 }
 
@@ -32,6 +39,9 @@ const resizeGridBtn = document.querySelector(".resize-grid-btn");
 
 resizeGridBtn.addEventListener("click", () => {
     let numSquaresPerSide = prompt("How many squares per side? (Maximum: 100)", "");
+
+    if (numSquaresPerSide === null) return; // exit if user clicks Cancel or presses ESC key
+
     if (numSquaresPerSide === "" || isNaN(numSquaresPerSide)) {
         alert("Please enter a positive integer.");
         return;
