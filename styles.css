@@ -17,6 +17,7 @@ body {
     height: 640px;
     display: flex;
     flex-wrap: wrap;
+    cursor: url('./pencil.png') 0 24, auto;
 }
 
 .cell {
